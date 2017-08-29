@@ -47,5 +47,5 @@ app.controller('SwapiController', ['$http', function ($http) {
         });
         
     };
-    self.getRandomGiphy();
+    // self.getRandomGiphy();
 }]);
