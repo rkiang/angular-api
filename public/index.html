@@ -22,7 +22,11 @@
             </li>
         </ul>
     </div>
-
+    <button ng-click="showRandom = ! showRandom">Random Giphy</button>
+    <div>
+    <img ng-show="showRandom" ng-src="{{vm.randomGiphy.data.image_url}}">
+    <!-- {{vm.randomGiphy.data.url}} -->
+    </div>
 </body>
 
 </html>
