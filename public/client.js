@@ -47,5 +47,22 @@ app.controller('SwapiController', ['$http', function ($http) {
         });
         
     };
-    // self.getRandomGiphy();
+    self.getRandomGiphy();
+
+
+    // example request:
+    // http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5
+    self.searchGiphy = function (input) {
+        var baseUrl = 'http://api.giphy.com/v1/gifs/search?';
+        baseUrl += 'q=' + input;
+        baseUrl += '&api_key=' + giphyAPIKey;
+        baseUrl += '&limit=3';
+    
+        console.log('baseUrl:', baseUrl);
+
+        $http.get(baseUrl).then(function (response) {
+            console.log('search giphys:', response.data.data);
+            self.searchGif = response.data.data;
+        });
+    }
 }]);
