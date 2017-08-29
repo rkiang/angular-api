@@ -61,8 +61,8 @@ app.controller('SwapiController', ['$http', function ($http) {
         console.log('baseUrl:', baseUrl);
 
         $http.get(baseUrl).then(function (response) {
-            console.log('search giphys:', response.data.data);
-            self.searchGif = response.data.data;
+            console.log('search giphys:', response.data);
+            self.searchGif = response.data;
         });
     }
 }]);

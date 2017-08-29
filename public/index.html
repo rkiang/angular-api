@@ -33,8 +33,9 @@
         <form>
             <input type="text" ng-model="vm.search" placeholder="Search for a Gif" />
             <button ng-click="vm.searchGiphy(vm.search)">Search</button>
-                <ul ng-repeat="gifs in vm.searchGif">
-                <img ng-src="{{gifs.downsized_url}}">
+                <ul ng-repeat="gifs in vm.searchGif.data">
+                <img ng-src="{{gifs.images.fixed_height_small.url}}">
+                <!-- {{gifs}} -->
                 </ul>
         </form>
     </div>
